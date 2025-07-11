@@ -1,0 +1,24 @@
+services:
+  - type: web
+    name: library
+    env: java
+    buildCommand: "./mvnw clean install -DskipTests"
+    startCommand: "java -jar target/zweibrary-0.0.1-SNAPSHOT.jar"
+    envVars:
+      - key: DATASOURCE_URL
+        fromDatabase:
+          name: zwelibrary
+          property: connectionString
+      - key: DATASOURCE_USER
+        fromDatabase:
+          name: zwelibrary
+          property: username
+      - key: DATASOURCE_PASS
+        fromDatabase:
+          name: zwelibrary
+          property: password
+
+databases:
+  - name: zwelibrary
+    databaseName: zwelibrary
+    user: zwelibrary_user
