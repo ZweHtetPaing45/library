@@ -275,7 +275,7 @@ public class LibraryController {
     @PostMapping("/admin_three")
     public String postThree(@RequestParam("file") MultipartFile file,Model model) throws IOException{
         threeservice.saveThree(file);
-        return "redirect:/admin_three";
+        return "redirect:/admin_two";
     }
 
      //Pdf file image create
