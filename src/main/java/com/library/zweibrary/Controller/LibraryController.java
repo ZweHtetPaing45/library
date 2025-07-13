@@ -316,7 +316,7 @@ public class LibraryController {
     @GetMapping("/pdf/three_delete/{id}")
     public String getthree(@PathVariable Long id) {
         threerepo.deleteById(id);
-        return "redirect:/admin_two";
+        return "redirect:/admin_three";
     }
 
 
